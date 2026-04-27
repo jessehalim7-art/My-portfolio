@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudfare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<script src="script.js"></script>
+<body>
+    <div class="container">
+        <div id="loginSection" class="section">
+            <div class="form-container">
+                <h1><i class="fas fa-tasks"></i> JIRS KITCHEN </h1>
+                <h2>Login to Continue</h2>
+                <form id="loginForm">
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="loginEmail" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="loginPassword" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+                <p>Don't have an account? <a href="#" onclick="switchToSignup()">Sign up</a></p>
+            </div>
+        </div>
+
+        <div id="signupSection" class="section" style="display:none">
+            <div class="form-container">
+                <h1><i class="fas fa-tasks"></i> Smart Todo</h1>
+                <h2>Create Account</h2>
+                <form id="signupForm">
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="signupName" placeholder="Full Name" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="signupEmail" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="signupPassword" placeholder="Password (min 6 characters)" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                </form>
+                <p>Already have an account? <a href="#" onclick="switchToLogin()">Login</a></p>
+            </div>
+        </div>
+
+        <div id="todoSection" class="section" style="display:none">
+            <div class="todo-container">
+                <div class="todo-header">
+                    <h1><i class="fas fa-check-circle"></i> My Tasks</h1>
+                    <div class="user-info">
+                        <span id="userName"></span>
+                        <button onclick="logout()" class="btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                    </div>
+                </div>
+                
+                <div class="todo-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-tasks"></i>
+                        <span id="totalTasks">0</span>
+                        <p>Total Tasks</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-check-circle"></i>
+                        <span id="completedTasks">0</span>
+                        <p>Completed</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-clock"></i>
+                        <span id="pendingTasks">0</span>
+                        <p>Pending</p>
+                    </div>
+                </div>
+
+                <div class="todo-input">
+                    <input type="text" id="todoInput" placeholder="Add a new task...">
+                    <select id="prioritySelect">
+                        <option value="low">Low Priority</option>
+                        <option value="medium" selected>Medium Priority</option>
+                        <option value="high">High Priority</option>
+                    </select>
+                    <button onclick="addTodo()" class="btn-add"><i class="fas fa-plus"></i> Add</button>
+                </div>
+
+                <div class="todo-filters">
+                    <button class="filter-btn active" onclick="filterTodos('all')">All</button>
+                    <button class="filter-btn" onclick="filterTodos('pending')">Pending</button>
+                    <button class="filter-btn" onclick="filterTodos('completed')">Completed</button>
+                </div>
+
+                <div id="todoList" class="todo-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+</body>
+</html>
